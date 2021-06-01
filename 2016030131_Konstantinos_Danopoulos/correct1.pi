@@ -1,0 +1,54 @@
+
+
+
+const temp = 14, temp_3 = 324 int;
+const M = 13.743 real;
+const P = -3.642 real;
+
+
+var limit, num, counter int;
+var numberr, test, counter_5 =13.4 real;
+
+func prime(n int) bool {
+   var i int; 
+   var result, isPrime bool;
+      
+   if (n < 0) 
+      result = prime(-n);
+   else if (n < 2) 
+      result = false;
+   else if (n == 2) 
+      result = true;
+   else if (n % 2 == 0) 
+      result = false;
+   else { 
+      i = 3;
+      isPrime = true;
+      while (isPrime and (i < n / 2) ) { 
+         isPrime = n % i != 0;
+         i = i + 2;
+      };
+      result = isPrime;
+   };
+   
+   return result;
+};
+
+func begin() {
+
+   limit = readInt();
+   counter = 0;
+   num = 2;
+
+   while (num <= limit) { 
+      if (prime(num)) { 
+         counter = counter + 1;
+         writeInt(num);
+         writeString(" ");
+      };
+      num = num + 1;
+   };
+  
+   writeString("\n");
+   writeInt(counter);   
+};
